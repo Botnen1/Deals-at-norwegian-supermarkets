@@ -2,6 +2,8 @@ import pandas as pd
 import time
 from colors import *
 
+
+
 print(f"{CYAN}                         ....::::  {RESET}")
 print(f"{YELLOW} ¤ # ¤ # ¤ # ¤ # ¤ # ¤ # ¤ # ¤ # ¤ {RESET}")                     
 print(f"{GREEN}     _____     _  {CYAN}!!. .:.....{RESET}")
@@ -25,30 +27,30 @@ import scraper_coop_extra
 import scraper_spar
 import scraper_coop_prix
 import scraper_joker
+def scrape_deals():
+    deals = []
 
-deals = []
+    print(f'{CYAN}\n\nREMA1000{RESET}')
+    deals.extend(scraper_rema1000.get_deals())
+    print(f'{YELLOW}\n\nKIWI{RESET}')
+    deals.extend(scraper_kiwi.get_deals())
+    print(f'{CYAN}\n\nMENY{RESET}')
+    deals.extend(scraper_MENY.get_deals())
+    print(f'{YELLOW}\n\nSPAR{RESET}')
+    deals.extend(scraper_spar.get_deals())
+    print(f'{CYAN}\n\nBUNNPRIS{RESET}')
+    deals.extend(scraper_bunnpris.get_deals())
+    print(f'{YELLOW}\n\nCOOP EXTRA{RESET}')
+    deals.extend(scraper_coop_extra.get_deals())
+    print(f'{CYAN}\n\nCOOP Prix{RESET}')
+    deals.extend(scraper_coop_prix.get_deals())
+    print(f'{YELLOW}\n\nJOKER{RESET}')
+    deals.extend(scraper_joker.get_deals())
+    
+    
 
-print(f'{CYAN}\n\nREMA1000{RESET}')
-deals.extend(scraper_rema1000.get_deals())
-print(f'{YELLOW}\n\nKIWI{RESET}')
-deals.extend(scraper_kiwi.get_deals())
-print(f'{CYAN}\n\nMENY{RESET}')
-deals.extend(scraper_MENY.get_deals())
-print(f'{YELLOW}\n\nSPAR{RESET}')
-deals.extend(scraper_spar.get_deals())
-print(f'{CYAN}\n\nBUNNPRIS{RESET}')
-deals.extend(scraper_bunnpris.get_deals())
-print(f'{YELLOW}\n\nCOOP EXTRA{RESET}')
-deals.extend(scraper_coop_extra.get_deals())
-print(f'{CYAN}\n\nCOOP Prix{RESET}')
-deals.extend(scraper_coop_prix.get_deals())
-print(f'{YELLOW}\n\nJOKER{RESET}')
-deals.extend(scraper_joker.get_deals())
+    df = pd.DataFrame(deals)
 
-df = pd.DataFrame(deals)
-
-df.to_csv('deals.csv', index=False)
-df.to_excel('deals.xlsx', index=False)
-
-print('All data has been written to deals.csv')
-print('All data has been written to deals.xlsx')
+    df.to_csv('deals.csv', index=False)
+    df.to_excel('deals.xlsx', index=False)
+    return deals 
