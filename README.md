@@ -6,6 +6,10 @@ Scraping the deals and discounted prices from all the mayor supermarkets in Norw
 
 Run the script from the terminal
 
+![Skjermbilde 2024-02-01 172218](https://github.com/Botnen1/Deals-at-norwegian-supermarkets/assets/94934743/452c8892-c1e0-4f08-a879-26a7c29455d5)
+![Skjermbilde 2024-02-01 172229](https://github.com/Botnen1/Deals-at-norwegian-supermarkets/assets/94934743/2e755b82-0053-4355-a11c-65f1aa9fb0cf)
+
+
 >>>python app.py
 https://github.com/Botnen1/Mattilbud/blob/main/Skjermbilde%202023-11-08%20181808.png
 >>>
